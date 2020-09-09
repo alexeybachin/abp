@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,700,900&display=swap');
+
+$mainFont: 'Roboto', sans-serif;
+$mainColor: #282829;
+$mainButtonColor: #FFFFFF;
+$mainButtonBgColor: #282829;
+$mainButtonBgColorHover: $mainButtonColor;
+$mainButtonColorHover: $mainButtonBgColor;
+$successColor: #4f8a10;
+$errorColor: #d8000c;
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $mainFont;
+  color: $mainColor;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+::-webkit-input-placeholder,
+:-ms-input-placeholder,
+::placeholder {
+  font-weight: 400;
+  font-size: calc(11px + (13 - 11) * ((100vw - 320px)/ (1920 - 320)));
+  color: #979797;
+}
+
+*[class*="app-spacer"] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.app-spacer-32 {
+  height: 32px;
+}
+
+.app-container {
+  width: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-offset {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 64px;
+}
+
+[class*="app-typo"] {
+  letter-spacing: 0.4px;
+  color: $mainColor;
+  margin: 0;
+  padding: 0;
+}
+
+.app-typo--heading-1 {
+  font-weight: 900;
+  font-size: calc(24px + (31 - 24) * ((100vw - 320px)/ (1920 - 320)));
+}
+
+.app-typo--align-center {
+  text-align: center;
+}
+
+form {
+  label,
+  .app-control__group-title {
+    display: block;
+    padding-right: 16px;
+    line-height: 34px;
+    font-size: calc(11px + (14 - 11) * ((100vw - 320px)/ (1920 - 320)));
+    font-weight: 700;
+    min-width: 100px;
+  }
+
+  .app-control__group {
+    div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .app-control-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 16px 0;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+      display: block;
+      border-radius: 4px;
+      background: #FFFFFF;
+      border: 2px solid #282829;
+      height: 32px;
+      line-height: 33px;
+      text-indent: 4px;
+      font-size: calc(11px + (14 - 11) * ((100vw - 320px)/ (1920 - 320)));
+      letter-spacing: 0.4px;
+      font-weight: 400;
+      width: 240px;
+    }
+
+    input[type=number]::-webkit-inner-spin-button,
+    input[type="date"],
+    select {
+      cursor: pointer;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 1px 8px rgba(0, 182, 254, 0.33);
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      cursor: pointer;
+      margin-top: -1px;
+    }
+
+    textarea {
+      width: auto;
+      resize: none;
+      height: 200px;
+    }
+
+    button {
+      display: inline-block;
+      border: none;
+      height: 50px;
+      min-width: 120px;
+      border-radius: 2px;
+      line-height: 50px;
+      letter-spacing: 0.4px;
+      font-size: calc(11px + (14 - 11) * ((100vw - 320px)/ (1920 - 320)));
+      text-align: center;
+      padding: 0 16px;
+      cursor: pointer;
+      font-weight: 700;
+      color: $mainButtonColor;
+      background: $mainButtonBgColor;
+      box-shadow: 0 3px 11px rgba(0,0,0,0.0);
+      transition: color 0.25s ease-in, background 0.25s ease-in, box-shadow 0.25s ease-in;
+    }
+
+    button.app-button__success {
+      background: $successColor;
+    }
+
+    button.app-button__cancel {
+      background: $errorColor;
+    }
+
+    button:hover,
+    button:hover:focus {
+      color: $mainButtonColorHover;
+      background: $mainButtonBgColorHover;
+      box-shadow: 0 3px 11px rgba(0,0,0,0.33);
+    }
+
+    button.app-button__success:hover,
+    button.app-button__success:hover:focus {
+      color: $successColor;
+      background: $mainButtonBgColorHover;
+      box-shadow: 0 3px 11px rgba(79,138,16,0.33);
+    }
+
+    button.app-button__cancel:hover,
+    button.app-button__cancel:hover:focus {
+      color: $errorColor;
+      background: $mainButtonBgColorHover;
+      box-shadow: 0 3px 11px rgba(216,0,12,0.33);
+    }
+
+    button:focus {
+      border: none;
+      outline: none;
+      box-shadow: 0 1px 8px rgba(0, 182, 254, 0.33);
+    }
+
+  }
+
+  .app-control-wrapper.app-control-wrapper--inline {
+    display: inline-block;
+  }
+
+  .app-control-wrapper.app-control-wrapper--inline ~ .app-control-wrapper.app-control-wrapper--inline {
+    margin-left: 8px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0 -50px;
+}
+
+.input {
+  border-right: 2px solid #282829;
+  text-align: right;
+
+  form textarea {
+    width: 100%;
+  }
+}
+
+.input,
+.output {
+  width: 50%;
+  overflow: hidden;
+  padding: 0 50px;
+}
+
+
+@media screen and (max-width: 991px) {
+  .app-offset {
+    padding: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .app-offset {
+    padding: 16px;
+  }
+}

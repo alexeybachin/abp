@@ -1,0 +1,51 @@
+{
+  "name": "abp",
+  "version": "1.0.0",
+  "description": "Alexey Bachin Photography | Official Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "start": "parcel -p 8888 src/index.html --open",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir dist --no-cache --no-source-maps --public-url ./"
+  },
+  "author": "Bachin",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexeybachin/abp.git"
+  },
+  "customDistStructure": {
+    "config": {
+      ".js": "assets/js",
+      "assets/img": [
+        ".jpg",
+        ".jpeg"
+      ],
+      ".css": "assets/css"
+    },
+    "options": {
+      "development": true
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-react": "^7.10.4",
+    "autoprefixer": "^9.8.6",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "lodash": "^4.17.20",
+    "node-sass": "^4.14.1",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-custom-dist-structure": "^1.1.16"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
